@@ -1,0 +1,26 @@
+{
+  "name": "create-iip-plugin",
+  "version": "0.0.1",
+  "description": "Simple CLI tool to bootstrap a WordPress plugin",
+  "main": "index.js",
+  "author": "Marek Rewers, IIP Office of Design <designdevops@america.gov>",
+  "license": "MIT",
+  "keywords": [
+    "CLI",
+    "WordPress",
+    "plugin",
+    "node"
+  ],
+  "bin": {
+    "create-iip-plugin": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.0",
+    "simple-git": "^1.106.0",
+    "touch": "^3.1.0"
+  }
+}
