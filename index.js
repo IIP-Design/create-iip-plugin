@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 'use strict';
 
 // Ends application on unhandled rejections
