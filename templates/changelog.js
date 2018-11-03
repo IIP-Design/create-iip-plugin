@@ -4,7 +4,7 @@ const fs = require( 'fs' );
 
 module.exports = {
 
-  writeChangelog: ( pluginDir, pluginTextDomain ) => {
+  writeChangelog: ( pluginDir ) => {
     const data = `# Change Log\n` +
                  `##### All notable changes to this project will be documented in this file.\n` +
                  `\n` +

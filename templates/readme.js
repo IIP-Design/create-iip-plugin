@@ -4,8 +4,8 @@ const fs = require( 'fs' );
 
 module.exports = {
 
-  writeReadme: ( pluginDir ) => {
-    const data = '# <% pluginName %>';
+  writeReadme: ( pluginDir, pluginProps ) => {
+    const data = `# ${pluginProps.name}`;
 
     // write to a new file named README.md
     fs.writeFile(`${pluginDir}/README.md`, data, (err) => {  
