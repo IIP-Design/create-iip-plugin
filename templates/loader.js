@@ -9,7 +9,9 @@ module.exports = {
     const { version, author } = pluginProps;
 
     const data = `<?php\n` +
+                 `\n` +
                  `namespace ${upperSnake};\n` +
+                 `\n` +
                  `/**\n` +
                  ` * Register all actions and filters for the plugin.\n` +
                  ` *\n` +
@@ -21,7 +23,9 @@ module.exports = {
                  ` * @subpackage ${upperSnake}/includes\n` +
                  ` * @author     ${author}\n` +
                  ` */\n` +
+                 `\n` +
                  `class Loader {\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * The array of actions registered with WordPress.\n` +
                  `	 *\n` +
@@ -29,7 +33,9 @@ module.exports = {
                  `	 * @access   protected\n` +
                  `	 * @var      array    $actions    The actions registered with WordPress to fire when the plugin loads.\n` +
                  `	 */\n` +
+                 `\n` +
                  `	protected $actions;\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * The array of filters registered with WordPress.\n` +
                  `	 *\n` +
@@ -37,16 +43,20 @@ module.exports = {
                  `	 * @access   protected\n` +
                  `	 * @var      array    $filters    The filters registered with WordPress to fire when the plugin loads.\n` +
                  `	 */\n` +
+                 `\n` +
                  `	protected $filters;\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * Initialize the collections used to maintain the actions and filters.\n` +
                  `	 *\n` +
                  `	 * @since    ${version}\n` +
                  `	 */\n` +
+                 `\n` +
                  `	public function __construct() {\n` +
                  `		$this->actions = array();\n` +
                  `		$this->filters = array();\n` +
                  `	}\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * Add a new action to the collection to be registered with WordPress.\n` +
                  `	 *\n` +
@@ -57,9 +67,11 @@ module.exports = {
                  `	 * @param    int                  $priority         Optional. he priority at which the function should be fired. Default is 10.\n` +
                  `	 * @param    int                  $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.\n` +
                  `	 */\n` +
+                 `\n` +
                  `	public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {\n` +
                  `		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );\n` +
                  `	}\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * Add a new filter to the collection to be registered with WordPress.\n` +
                  `	 *\n` +
@@ -70,9 +82,11 @@ module.exports = {
                  `	 * @param    int                  $priority         Optional. he priority at which the function should be fired. Default is 10.\n` +
                  `	 * @param    int                  $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1\n` +
                  `	 */\n` +
+                 `\n` +
                  `	public function add_filter( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {\n` +
                  `		$this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority, $accepted_args );\n` +
                  `	}\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * A utility function that is used to register the actions and hooks into a single\n` +
                  `	 * collection.\n` +
@@ -87,6 +101,7 @@ module.exports = {
                  `	 * @param    int                  $accepted_args    The number of arguments that should be passed to the $callback.\n` +
                  `	 * @return   array                                  The collection of actions and filters registered with WordPress.\n` +
                  `	 */\n` +
+                 `\n` +
                  `	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {\n` +
                  `		$hooks[] = array(\n` +
                  `			'hook'          => $hook,\n` +
@@ -97,11 +112,13 @@ module.exports = {
                  `		);\n` +
                  `		return $hooks;\n` +
                  `	}\n` +
+                 `\n` +
                  `	/**\n` +
                  `	 * Register the filters and actions with WordPress.\n` +
                  `	 *\n` +
                  `	 * @since    ${version}\n` +
                  `	 */\n` +
+                 `\n` +
                  `	public function run() {\n` +
                  `		foreach ( $this->filters as $hook ) {\n` +
                  `			add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );\n` +

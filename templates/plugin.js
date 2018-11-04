@@ -9,6 +9,7 @@ module.exports = {
     const { name, uri, description, version, author, domain, license, licenseUri } = pluginProps;
 
     const data = `<?php\n` +
+                 `\n` +
                  `/**\n` +
                  `* Plugin Name: ${name}\n` +
                  `* Plugin URI: ${uri}\n` +
@@ -39,6 +40,7 @@ module.exports = {
                  `* not affect the page life cycle.\n` +
                  `*\n` +
                  `*/\n` +
+                 `\n` +
                  `function run_${snake}() {\n` +
                  `  $plugin = new ${upperSnake}();\n` +
                  `  $plugin->run();\n` +
