@@ -12,7 +12,9 @@ module.exports = {
                  `namespace ${upperSnake};\n` +
                  `\n` +
                  `class Frontend {\n` +
+                 `\n` +
                  `  // INSERT YOUR FRONTEND FUNCTIONS HERE\n`+
+                 `\n` +
                  '}';
 
     // Write the frontend class file where all public hooks will be added

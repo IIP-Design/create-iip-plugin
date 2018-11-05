@@ -6,7 +6,15 @@ module.exports = {
 
   writeClass: ( nameObj, pluginProps ) => {
     const { base, kebab, upperSnake } = nameObj;
-    const { version } = pluginProps;
+    const { version, admin } = pluginProps;
+
+    let optionalHooks;
+    if ( admin ) {
+      optionalHooks = `    $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_metabox' );\n` +
+                      `    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_${kebab}_admin' );`;
+    } else {
+      optionalHooks = ``;
+    };
 
     const data = `<?php\n` +
                  `\n` +
@@ -82,6 +90,7 @@ module.exports = {
                  `    $plugin_admin = new ${upperSnake}\\Admin( $this->get_plugin_name(), $this->get_version() );\n` +
                  `\n` +
                  `    // Admin hooks\n` +
+                 `${optionalHooks}\n` +
                  `    $this->loader->add_action( 'INSERT_WP_HOOK', $plugin_admin, 'INSERT_CALLBACK' );\n` +
                  `  }\n` +
                  `\n` +
