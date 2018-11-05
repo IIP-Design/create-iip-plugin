@@ -22,9 +22,8 @@ module.exports = {
                  `  }\n` +
                  `}`;
 
-    // write to a new file named composer.json
-    fs.writeFile(`${pluginDir}/composer.json`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the composer.json
+    fs.writeFile(`${pluginDir}/composer.json`, data, (err) => {
       if (err) throw err;
     });
   }

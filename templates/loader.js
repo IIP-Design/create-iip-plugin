@@ -129,9 +129,8 @@ module.exports = {
                  `	}\n` +
                  `}\n`;
 
-    // Write the PHP loader class file
-    fs.writeFile(`${base}/includes/class-${kebab}-loader.php`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the PHP loader file, which loads the classes into the main plugin class
+    fs.writeFile(`${base}/includes/class-${kebab}-loader.php`, data, (err) => {
       if (err) throw err;
     });
   }

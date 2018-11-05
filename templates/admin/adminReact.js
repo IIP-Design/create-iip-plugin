@@ -12,16 +12,16 @@ module.exports = {
                  `namespace ${upperSnake};\n` +
                  `\n` +
                  `class Admin {\n` +
+                 `\n` +
                  `  // INSERT YOUR FRONTEND FUNCTIONS HERE\n` +
                  `  // THE BELOW INCLUDED FUNCTIONS ADD AN ADMIN METABOX AND ENQUEQUE ADMIN SCRIPTS\n` +
                  `  // FEEL FREE TO DELETE IF NOT NEEDED\n` +
-                 `  public function enqueue_${snake}_admin() {\n` +
                  `\n` +
+                 `  public function enqueue_${snake}_admin() {\n` +
                  `    wp_enqueue_script( '${kebab}-admin-js', ${screamingSnake}_URL . 'admin/js/dist/${kebab}-admin.min.js', array(), null, true );\n` +
                  `  }\n` +
                  `\n` +
                  `  public function add_metabox() {\n` +
-                 `\n` +
                  `    $post_type = array( 'post', 'page' );\n` +
                  `    add_meta_box(\n` +
                  `      '${kebab}-metabox',\n` +
@@ -38,9 +38,8 @@ module.exports = {
                  `  }\n` +
                  `}`;
 
-    // Write to a new file named README.md
-    fs.writeFile(`${base}/admin/class-${kebab}-admin.php`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the admin class file where all admin hooks will be added
+    fs.writeFile(`${base}/admin/class-${kebab}-admin.php`, data, (err) => {
       if (err) throw err;
     });
   }

@@ -82,6 +82,8 @@ module.exports = {
                  `    $plugin_admin = new ${upperSnake}\\Admin( $this->get_plugin_name(), $this->get_version() );\n` +
                  `\n` +
                  `    // Admin hooks\n` +
+                 `    $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_metabox' );\n` +
+                 `    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_${kebab}_admin' );\n` +
                  `    $this->loader->add_action( 'INSERT_WP_HOOK', $plugin_admin, 'INSERT_CALLBACK' );\n` +
                  `  }\n` +
                  `\n` +

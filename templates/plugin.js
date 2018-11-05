@@ -47,9 +47,8 @@ module.exports = {
                  `}\n` +
                  `run_${snake}();`;
 
-    // write to a new file named README.md
-    fs.writeFile(`${base}/${kebab}.php`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the plugin PHP file, which registers the plugin
+    fs.writeFile(`${base}/${kebab}.php`, data, (err) => {
       if (err) throw err;
     });
   }

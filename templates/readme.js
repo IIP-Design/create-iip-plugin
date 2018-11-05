@@ -7,9 +7,8 @@ module.exports = {
   writeReadme: ( pluginDir, pluginProps ) => {
     const data = `# ${pluginProps.name}`;
 
-    // write to a new file named README.md
-    fs.writeFile(`${pluginDir}/README.md`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write to a new file named README.md
+    fs.writeFile(`${pluginDir}/README.md`, data, (err) => {
       if (err) throw err;
     });
   }

@@ -13,9 +13,8 @@ module.exports = {
                  `\n` +
                  `## Initial Release\n`;
   
-    // write to a new file named CHANGELOG.md
-    fs.writeFile(`${pluginDir}/CHANGELOG.md`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the initial changelog
+    fs.writeFile(`${pluginDir}/CHANGELOG.md`, data, (err) => {
       if (err) throw err;
     });
   }

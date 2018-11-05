@@ -15,9 +15,8 @@ module.exports = {
                  `  // INSERT YOUR FRONTEND FUNCTIONS HERE\n`+
                  '}';
 
-    // Write to a new file named README.md
-    fs.writeFile(`${base}/public/class-${kebab}-public.php`, data, (err) => {  
-      // throws an error, you could also catch it here
+    // Write the frontend class file where all public hooks will be added
+    fs.writeFile(`${base}/public/class-${kebab}-public.php`, data, (err) => {
       if (err) throw err;
     });
   }
