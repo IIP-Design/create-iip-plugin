@@ -1,3 +1,11 @@
+/**
+ * Template for the package.json file if admin React app selected.
+ *
+ * @param {string} base The plugin name as entered by the user/base directory for the plugin.
+ * @param {string} kebab The plugin name in kebab-case.
+ * @param {string} version The user supplied plugin version.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
@@ -23,4 +31,4 @@ module.exports = {
         if (err) throw err;
     });
   }
-}
+};

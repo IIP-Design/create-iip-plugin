@@ -1,3 +1,11 @@
+/**
+ * Template for the test index.html file used if admin React app selected.
+ *
+ * @param {string} base The plugin name as entered by the user/base directory for the plugin.
+ * @param {string} title The plugin name in Tile Case.
+ * @param {string} kebab The plugin name in kebab-case.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );

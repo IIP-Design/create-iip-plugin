@@ -1,3 +1,10 @@
+/**
+ * Template for the plugin's composer file.
+ *
+ * @param {string} pluginDir The path to the plugin files on the user's machine.
+ * @param {object} pluginProps An object containing all the plugin properties gather by inquirer.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
@@ -27,4 +34,4 @@ module.exports = {
       if (err) throw err;
     });
   }
-}
+};

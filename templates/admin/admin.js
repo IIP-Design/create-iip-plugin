@@ -1,4 +1,10 @@
-'use strict';
+/**
+ * Template for the plugin's admin PHP class, which lists all admin hooks.
+ *
+ * @param {object} nameObj An object with various transformations of the plugin name.
+ */
+
+ 'use strict';
 
 const fs = require( 'fs' );
 

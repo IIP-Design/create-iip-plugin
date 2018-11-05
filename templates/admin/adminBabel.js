@@ -1,3 +1,9 @@
+/**
+ * Template for the admin babelrc file.
+ *
+ * @param {string} base The plugin name as entered by the user/base directory for the plugin.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );

@@ -1,3 +1,9 @@
+/**
+ * Tenplate for the changelog file.
+ *
+ * @param {string} pluginDir The path to the plugin files on the user's machine.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
@@ -18,4 +24,4 @@ module.exports = {
       if (err) throw err;
     });
   }
-}
+};

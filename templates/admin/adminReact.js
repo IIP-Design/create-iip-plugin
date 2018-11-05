@@ -1,3 +1,9 @@
+/**
+ * Template for the admin PHP class (if admin React app selected).
+ *
+ * @param {object} nameObj An object with various transformations of the plugin name.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
@@ -43,4 +49,4 @@ module.exports = {
       if (err) throw err;
     });
   }
-}
+};

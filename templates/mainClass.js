@@ -1,3 +1,10 @@
+/**
+ * Template for the plugin's main PHP class, which registers all hooks.
+ *
+ * @param {object} nameObj An object with various transformations of the plugin name.
+ * @param {object} pluginProps An object containing all the plugin properties gather by inquirer.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
@@ -138,4 +145,4 @@ module.exports = {
       if (err) throw err;
     });
   }
-}
+};

@@ -1,3 +1,10 @@
+/**
+ * Template for the admin index.js file (admin app entry point).
+ *
+ * @param {string} base The plugin name as entered by the user/base directory for the plugin.
+ * @param {string} kebab The plugin name in kebab-case.
+ */
+
 'use strict';
 
 const fs = require( 'fs' );
