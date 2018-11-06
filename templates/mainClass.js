@@ -38,7 +38,7 @@ module.exports = {
                  `  protected $loader;\n` +
                  `\n` +
                  `  /**\n` +
-                 `   * The unique identifier  and version of this plugin.\n` +
+                 `   * The unique identifier and version of this plugin.\n` +
                  `   *\n` +
                  `   * @since    ${version}\n` +
                  `   * @access   protected\n` +
@@ -51,7 +51,7 @@ module.exports = {
                  `   * Define the core functionality of the plugin.\n` +
                  `   *\n` +
                  `   * Set the plugin name and the plugin version that can be used throughout the plugin.\n` +
-                 `   * Load the dependencies, define the locale, and set the hooks for the admin area and\n` +
+                 `   * Load the dependencies and set the hooks for the admin area and\n` +
                  `   * the public-facing side of the site.\n` +
                  `   *\n` +
                  `   * @since    ${version}\n` +
