@@ -1,7 +1,7 @@
 /**
  * Template for the plugin's readme file.
  *
- * @param {string} pluginDir The path to the plugin files on the user's machine.
+ * @param {object} nameObj An object with various transformations of the plugin name.
  * @param {object} pluginProps An object containing all the plugin properties gather by inquirer.
  */
 
@@ -11,8 +11,9 @@ const fs = require( 'fs' );
 
 module.exports = {
 
-  writeReadme: ( pluginDir, pluginProps ) => {
+  writeReadme: ( nameObj, pluginProps ) => {
 
+    const { base, kebab } = nameObj;
     const { name, admin } = pluginProps;
 
     const basicTree = `\`\`\`bash\n` +
@@ -56,7 +57,7 @@ module.exports = {
 
     const data = `# ${name}\n` +
                  `\n` +
-                 `This plugin contains a \`${name}.php\`, which registers plugin and begins its execution. Additionally, there is an admin class (\`admin/class-${name}-admin.php\`) where all admin hooks are registered and the frontend class (\`public/class-${name}-public.php\`) where all public hooks are registered. The includes directory contains the main plugin class (\`include/class-${name}.php\`), which defines the core functionality of the plugin and the loader file (\`include/class-${name}-loader.php\`), which feeds the admin and public hooks in from their respective classes into the main class file.\n` +
+                 `This plugin contains a \`${kebab}.php\`, which registers plugin and begins its execution. Additionally, there is an admin class (\`admin/class-${kebab}-admin.php\`) where all admin hooks are registered and the frontend class (\`public/class-${kebab}-public.php\`) where all public hooks are registered. The includes directory contains the main plugin class (\`include/class-${kebab}.php\`), which defines the core functionality of the plugin and the loader file (\`include/class-${kebab}-loader.php\`), which feeds the admin and public hooks in from their respective classes into the main class file.\n` +
                  `\n` +
                  `${react}` +
                  `## Plugin Structure\n` +
@@ -64,7 +65,7 @@ module.exports = {
                  `${tree}`;
 
     // Write to a new file named README.md
-    fs.writeFile(`${pluginDir}/README.md`, data, (err) => {
+    fs.writeFile(`${base}/README.md`, data, (err) => {
       if (err) throw err;
     });
   }
